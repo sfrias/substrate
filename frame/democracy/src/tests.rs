@@ -229,7 +229,8 @@ fn propose_set_balance(who: u64, value: u64, delay: u64) -> DispatchResult {
 	Democracy::propose(
 		Origin::signed(who),
 		set_balance_proposal_hash(value),
-		delay
+		delay,
+		u32::max_value(),
 	)
 }
 
@@ -237,7 +238,8 @@ fn propose_set_balance_and_note(who: u64, value: u64, delay: u64) -> DispatchRes
 	Democracy::propose(
 		Origin::signed(who),
 		set_balance_proposal_hash_and_note(value),
-		delay
+		delay,
+		u32::max_value(),
 	)
 }
 
